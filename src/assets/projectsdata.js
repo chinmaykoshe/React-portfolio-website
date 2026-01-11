@@ -50,7 +50,7 @@ const projects = [
       description:
         'Built a chat application using React, Node.js, and Socket.io.',
       features: 'Real-time Chat, User Authentication, Responsive Design',
-      image: '/images/chatapp.png',
+      image: '/images/chatapp.png' || '',
       live: '',
       github: 'https://github.com/chinmaykoshe/chat-app',
       category: 'mini',
@@ -61,8 +61,8 @@ const projects = [
         'Built an online quick notepad application with password and exporting.',
       features:
         'Quick notes, Firebase backend, password protection, export notes',
-      image: '/images/chatapp.png',
-      live: '',
+      image: '/images/fn.jpeg',
+      live: 'https://chinmaykoshe.github.io/firebase-notepad/',
       github: 'https://github.com/chinmaykoshe/Firebase-notepad',
       category: 'mini',
     },
