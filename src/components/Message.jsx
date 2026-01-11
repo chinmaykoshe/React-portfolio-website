@@ -59,7 +59,7 @@ function Message() {
   };
 
   return (
-    <section className="py-12 pb-20 px-4 flex justify-center items-center bg-gradient-to-b from-transparent/0 to-black/20">
+    <section id='message' className="py-12 pb-20 px-4 flex justify-center items-center bg-gradient-to-b from-transparent/0 to-black/20">
       <div className="w-full max-w-lg mx-auto text-center fade-up">
         <h2 className="text-2xl sm:text-3xl font-semibold mb-4 bg-gradient-to-r from-[#00ffd9] to-cyan-300 bg-clip-text text-transparent">
           Send a message

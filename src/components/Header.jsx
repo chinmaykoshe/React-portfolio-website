@@ -11,7 +11,7 @@ function Header() {
         <nav className="flex justify-between items-center py-2 sm:py-2.5">
           {/* Logo / Name */}
           <a
-            href="#hero"
+            href="#about"
             className="text-base sm:text-lg font-semibold tracking-wide text-white"
           >
             <span className="text-[#00ffd9]">{'<CK />'}</span>
@@ -24,6 +24,7 @@ function Header() {
               { href: '#Tech-Stack', label: 'Tech-Stack' },
               { href: '#portfolio', label: 'Portfolio' },
               { href: '#contact', label: 'Contact' },
+              { href: '#message', label: 'Message' },
             ].map((item) => (
               <li key={item.href}>
                 <a
@@ -70,6 +71,7 @@ function Header() {
           { href: '#Tech-Stack', label: 'Tech-Stack' },
           { href: '#portfolio', label: 'Portfolio' },
           { href: '#contact', label: 'Contact' },
+          { href: '#message', label: 'Message' },
         ].map((item) => (
           <a
             key={item.href}
