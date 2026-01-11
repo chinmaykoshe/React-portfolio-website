@@ -103,6 +103,11 @@ function Projects() {
                     </>
                 )}
 
+                {/* DIVIDER */}
+                <div className="relative mt-16 mb-16 w-full flex justify-center">
+                    <hr className="w-4/5 border-t-2 border-[#00ffd9]" />
+                </div>
+
                 {/* MINI PROJECTS */}
                 {miniProjects.length > 0 && (
                     <>
