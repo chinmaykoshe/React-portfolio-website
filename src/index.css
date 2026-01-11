@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: #0f2027;
+  overscroll-behavior: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+li,
+span {
+  font-family: 'Roboto Mono', monospace;
+}
+
+@keyframes textFill {
+  0% {
+    background-size: 100% 0%;
+  }
+
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+.loader-text {
+  color: transparent;
+  -webkit-text-stroke: 1px #00ffd9;
+  background: linear-gradient(to top, #00ffd9 0%, #00ffd9 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textFill 1s ease-in-out forwards;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bubble {
+  background-color: #00ffd9;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  filter: blur(12px);
+  animation: float linear forwards;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(-120vh) translateX(var(--x-move, 0)) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Base dot: size via var, position via translate3d, smooth background edge */
+.cursor-dot {
+  --x: 0px;
+  --y: 0px;
+  --size: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  /* Soft core + halo with vector-like gradient for smooth scaling */
+  background: radial-gradient(circle, rgba(0, 255, 217, 0.9) 0 60%, rgba(0, 255, 217, 0.3) 60% 100%);
+  /* Thin accent ring that doesn't get scaled anymore */
+  box-shadow: 0 0 0 1px #00ffd9 inset;
+  pointer-events: none;
+  transform: translate3d(var(--x), var(--y), 0) translate(-50%, -50%);
+  z-index: 9999;
+  opacity: 0.9;
+  transition: background 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  will-change: transform;
+  /* hint only if needed */
+}
+
+/* Link/media hover now adjusts size, not scale */
+.cursor-dot.link-hover {
+  --size: 50px;
+  opacity: 0.25;
+  /* Subtle glow on interactive links */
+  box-shadow: 0 0 0 1px #00ffd9 inset, 0 0 24px rgba(0, 255, 217, 0.35);
+}
+
+.cursor-dot.media-hover {
+  --size: 25px;
+  opacity: 0.25;
+  box-shadow: 0 0 0 1px #00ffd9 inset, 0 0 16px rgba(0, 255, 217, 0.3);
+}
+
+.cursor-dot.text-hover {
+  --size: 25px;
+}
+
+@media (max-width: 639px) {
+  .cursor-dot {
+    display: none !important;
+  }
+}
+
+#hero-avatar-wrapper {
+  mask-image: radial-gradient(circle, white 98%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, white 98%, transparent 100%);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+.ring-animation {
+  position: relative;
+}
+
+.ring-animation::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(0, 255, 217, 0.6), transparent 60%);
+  transition: all 0.2s ease-out;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+@keyframes wave-effect {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  10% {
+    transform: scale(1.3) rotate(0deg);
+  }
+
+  20% {
+    transform: scale(1.3) rotate(15deg);
+  }
+
+  30% {
+    transform: scale(1.3) rotate(-15deg);
+  }
+
+  40% {
+    transform: scale(1.3) rotate(10deg);
+  }
+
+  50% {
+    transform: scale(1.3) rotate(-10deg);
+  }
+
+  60% {
+    transform: scale(1.3) rotate(0deg);
+  }
+
+  70% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.animate-wave-effect {
+  animation: wave-effect 3s ease-in-out infinite;
+}
+
+#confetti-btn {
+  transition: opacity 0.5s ease;
+}
+
+#confetti-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Subtle polish */
+.project-card {
+  border: 1px solid rgba(0, 255, 217, 0.15);
+  backdrop-filter: blur(4px);
+  transition: transform .3s ease, box-shadow .3s ease, background-image .3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 0 32px rgba(0, 255, 217, 0.25);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffd9, transparent);
+  transition: width .25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.accent-text {
+  background: linear-gradient(90deg, #00ffd9 0%, #b2fff0 50%, #00ffd9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #00ffd9;
+  outline-offset: 3px;
+  border-radius: 8px;
+}

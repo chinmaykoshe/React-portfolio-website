@@ -1,0 +1,101 @@
+.loader-text {
+    color: transparent;
+    -webkit-text-stroke: 2px #00ffd9;
+    word-spacing: 0.5em;
+}
+
+.loader-completed-letter {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 2px #00ffd9;
+}
+
+.loader-text.loader-complete {
+    animation: fillAndScale 2s ease-out forwards;
+}
+
+.loader-text.loader-complete .loader-completed-letter {
+    background: linear-gradient(to top, #00ffd9 0%, #00ffd9 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: textFill 0.8s ease-in-out 0.2s forwards;
+}
+
+@keyframes textFill {
+    0% {
+        background-size: 100% 0%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+@keyframes fillAndScale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
+}
+
+.loader-fade-out {
+    animation: fadeOut 0.5s ease-out 2.2s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader-typing-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: baseline;
+    width: 1ch;
+    text-align: center;
+}
+
+.loader-letter-center {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 2px #00ffd9;
+    line-height: 1;
+    z-index: 2;
+    position: relative;
+}
+
+.loader-letter-blur {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 2px #00ffd9;
+    line-height: 1;
+    filter: blur(4px);
+    opacity: 0.3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1ch;
+    text-align: center;
+    pointer-events: none;
+}
+
+.loader-letter-top {
+    top: -1.2em;
+    z-index: 1;
+}
+
+.loader-letter-bottom {
+    top: 1.2em;
+    z-index: 1;
+}
