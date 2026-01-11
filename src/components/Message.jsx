@@ -20,8 +20,17 @@ function Message() {
     setIsSubmitting(true);
     setSubmitStatus('');
 
+    // ✅ Use Vite’s import.meta.env
+    const apiUrl = import.meta.env.VITE_API_URL;
+
+    if (!apiUrl) {
+      setSubmitStatus('API URL not configured. Check .env file.');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const response = await fetch('https://formspree.io/f/xvzzpjll', {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +39,7 @@ function Message() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          // Special Formspree fields
+          // Formspree special fields
           _subject: `new msg from ${formData.name}`,
           _replyto: formData.email,
         }),
