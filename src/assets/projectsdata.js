@@ -45,16 +45,16 @@ const projects = [
       github: 'https://github.com/chinmaykoshe/hiring-hub',
       category: 'minor',
     },
-    {
-      title: 'Chat App',
-      description:
-        'Built a chat application using React, Node.js, and Socket.io.',
-      features: 'Real-time Chat, User Authentication, Responsive Design',
-      image: '/images/chatapp.png' || '',
-      live: '',
-      github: 'https://github.com/chinmaykoshe/chat-app',
-      category: 'mini',
-    },
+    // {
+    //   title: 'Chat App',
+    //   description:
+    //     'Built a chat application using React, Node.js, and Socket.io.',
+    //   features: 'Real-time Chat, User Authentication, Responsive Design',
+    //   image: '/images/chatapp.png' || '',
+    //   live: '',
+    //   github: 'https://github.com/chinmaykoshe/chat-app',
+    //   category: 'mini',
+    // },
     {
       title: 'Firebase Notepad',
       description:
