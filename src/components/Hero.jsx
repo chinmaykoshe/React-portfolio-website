@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import bgImage from '../assets/bg.png'
 import meImage from '../assets/me.png'
+import ScrollBtn from './ScrollBtn'
 
 function Hero() {
     const avatarWrapperRef = useRef(null)
@@ -101,12 +102,7 @@ function Hero() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-12">
-                    <a href="#Tech-Stack"
-                        className="inline-block text-[#00ffd9] border border-[#00ffd9] px-6 py-3 rounded-full text-base sm:text-lg hover:bg-[#00ffd9] hover:text-black transition-all duration-300 animate-bounce">
-                        Scroll Down ↓
-                    </a>
-                </div>
+                <ScrollBtn target="#Tech-Stack" label='Know More ↓' />
             </div>
         </section>
     )

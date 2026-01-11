@@ -263,3 +263,7 @@ button:focus-visible {
   outline-offset: 3px;
   border-radius: 8px;
 }
+
+html{
+  scroll-behavior: smooth;
+}

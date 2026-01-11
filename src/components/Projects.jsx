@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import projects from '../assets/projectsdata';
+import ScrollBtn from './ScrollBtn';
 
 function Projects() {
     const [modalData, setModalData] = useState(null);
@@ -140,14 +141,8 @@ function Projects() {
                     </>
                 )}
 
-                <div className="mt-12 flex justify-center w-full">
-                    <a
-                        href="#contact"
-                        className="inline-block text-[#00ffd9] border border-[#00ffd9] px-6 py-3 rounded-full hover:bg-[#00ffd9] hover:text-black transition-all duration-300 animate-bounce"
-                    >
-                        More Projects Coming Soon ↓
-                    </a>
-                </div>
+                <ScrollBtn target="#contact" label="Hire Me for Your Next Build ↓" />
+
             </section>
 
             {/* PROJECT MODAL */}
