@@ -10,7 +10,7 @@ const projects = [
       image: '/images/rc.png',
       live: 'https://ritual-cakes--alpha.vercel.app/',
       github: 'https://github.com/chinmaykoshe/ritual-cakes-new',
-      category: 'internship',
+      category: 'major',
     },
     {
       title: 'Visual Classroom',
