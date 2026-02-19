@@ -1,16 +1,28 @@
-# React + Vite
+# 👋 Chinmay Koshe – Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live Website: https://chinmaykoshe.netlify.app/
 
-Currently, two official plugins are available:
+## 📌 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is my personal portfolio website built using React.js and modern frontend technologies.  
 
-## React Compiler
+I have built this website to showcase my workspace, projects, technical skills, and professional journey as a Full Stack Developer.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The portfolio highlights:
+- My major full-stack projects
+- Technical skillset
+- Education and certifications
+- Resume and contact information
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript
+- Git & GitHub
+- Netlify (Deployment)
+
+## 🚀 Purpose
+
+The main purpose of this portfolio is to professionally present my development work and demonstrate my experience in building scalable and responsive web applications.
