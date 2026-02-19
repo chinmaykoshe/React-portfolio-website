@@ -7,8 +7,8 @@ import ScrollBtn from './ScrollBtn';
 function Projects() {
     const [modalData, setModalData] = useState(null);
 
-    const internshipProjects = projects.filter(
-        (p) => p.category === 'internship'
+    const majorProjects = projects.filter(
+        (p) => p.category === 'major'
     );
     const minorProjects = projects.filter((p) => p.category === 'minor');
     const miniProjects = projects.filter((p) => p.category === 'mini');
@@ -35,14 +35,14 @@ function Projects() {
                     of My Work
                 </h3>
 
-                {/* INTERNSHIP PROJECTS */}
-                {internshipProjects.length > 0 && (
+                {/* major PROJECTS */}
+                {majorProjects.length > 0 && (
                     <>
                         <h4 className="mt-10 mb-4 text-lg font-semibold text-[#00ffd9]">
-                            Internship Project
+                            major Project
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-up delay-200">
-                            {internshipProjects.map((project, index) => (
+                            {majorProjects.map((project, index) => (
                                 <div
                                     key={`${project.title}-${index}`}
                                     onClick={() => openModal(project)}
