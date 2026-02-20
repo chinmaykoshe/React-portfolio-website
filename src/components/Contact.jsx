@@ -1,6 +1,9 @@
 // src/components/Contact.jsx
 import React from 'react';
 import ScrollBtn from './ScrollBtn';
+import mailIcon from '../assets/mail-dot-ru.svg';
+import githubIcon from '../assets/github-logo.svg';
+import linkedInIcon from '../assets/linked.svg';
 
 function Contact() {
     return (
@@ -40,7 +43,7 @@ function Contact() {
                             className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-[#00ffd9]/20 transition transform hover:-translate-y-1 hover:scale-110"
                         >
                             <img
-                                src="/images/mail-dot-ru.svg"
+                                src={mailIcon}
                                 alt="Email"
                                 className="w-5 h-5 filter brightness-0 invert"
                             />
@@ -55,7 +58,7 @@ function Contact() {
                             className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-[#00ffd9]/20 transition transform hover:-translate-y-1 hover:scale-110"
                         >
                             <img
-                                src="/images/github-logo.svg"
+                                src={githubIcon}
                                 alt="GitHub"
                                 className="w-5 h-5 invert"
                             />
@@ -70,7 +73,7 @@ function Contact() {
                             className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-[#00ffd9]/20 transition transform hover:-translate-y-1 hover:scale-110"
                         >
                             <img
-                                src="/images/linked.svg"
+                                src={linkedInIcon}
                                 alt="LinkedIn"
                                 className="w-5 h-5 invert"
                             />

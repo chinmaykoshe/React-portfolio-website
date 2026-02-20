@@ -10,22 +10,27 @@ import CustomCursor from './components/CustomCursor'
 import Bubbles from './components/Bubbles'
 import ConfettiButton from './components/ConfettiButton'
 import Message from './components/Message'
+import projects from './assets/projectsdata'
+import bgImage from './assets/bg.png'
+import meImage from './assets/me.png'
+import mailIcon from './assets/mail-dot-ru.svg'
+import githubIcon from './assets/github-logo.svg'
+import linkedInIcon from './assets/linked.svg'
+import liveIcon from './assets/live.png'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [loadingProgress, setLoadingProgress] = useState(0)
 
   useEffect(() => {
-    // Preload images that will be used in the app
     const imageUrls = [
-      '/images/rc.png',
-      '/images/VC.png',
-      '/images/ff.png',
-      '/images/hh.png',
-      '/images/mail-dot-ru.svg',
-      '/images/github-logo.svg',
-      '/images/linked.svg',
-      '/images/live.png'
+      bgImage,
+      meImage,
+      mailIcon,
+      githubIcon,
+      linkedInIcon,
+      liveIcon,
+      ...projects.map((project) => project.image)
     ]
 
     if (imageUrls.length === 0) {
@@ -50,7 +55,7 @@ function App() {
       }
       img.src = url
     })
-  }, [isLoading])
+  }, [])
 
   useEffect(() => {
     if (isLoading) return
@@ -71,6 +76,7 @@ function App() {
 
     // Project card tilt effects
     const projectCards = document.querySelectorAll(".project-card")
+    const projectCardListeners = []
     projectCards.forEach((card) => {
       let rAF = null
       const bounds = () => card.getBoundingClientRect()
@@ -97,24 +103,31 @@ function App() {
 
       card.addEventListener("pointermove", onMove, { passive: true })
       card.addEventListener("pointerleave", onLeave, { passive: true })
+      projectCardListeners.push({ card, onMove, onLeave })
     })
 
     // Smooth anchor focus after jump
+    const anchorListeners = []
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      a.addEventListener("click", () => {
+      const onClick = () => {
         const id = a.getAttribute("href")
         const target = document.querySelector(id)
         if (target) {
           setTimeout(() => target.setAttribute("tabindex", "-1"), 0)
         }
-      }, { passive: true })
+      }
+      a.addEventListener("click", onClick, { passive: true })
+      anchorListeners.push({ a, onClick })
     })
 
     return () => {
       observer.disconnect()
-      projectCards.forEach((card) => {
+      projectCardListeners.forEach(({ card, onMove, onLeave }) => {
         card.removeEventListener("pointermove", onMove)
         card.removeEventListener("pointerleave", onLeave)
+      })
+      anchorListeners.forEach(({ a, onClick }) => {
+        a.removeEventListener("click", onClick)
       })
     }
   }, [isLoading])

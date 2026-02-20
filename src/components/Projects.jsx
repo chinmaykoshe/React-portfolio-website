@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import projects from '../assets/projectsdata';
 import ScrollBtn from './ScrollBtn';
+import liveIcon from '../assets/live.png';
+import githubIcon from '../assets/github-logo.svg';
 
 function Projects() {
     const [modalData, setModalData] = useState(null);
@@ -188,7 +190,7 @@ function Projects() {
                                         className="inline-flex items-center gap-2 px-4 py-2 rounded border border-[#00ffd9] text-[#00ffd9] hover:bg-[#00ffd9] hover:text-black transition"
                                     >
                                         <img
-                                            src="/images/live.png"
+                                            src={liveIcon}
                                             alt="Visit Live"
                                             className="h-5 w-5 invert"
                                         />
@@ -203,7 +205,7 @@ function Projects() {
                                         className="inline-flex items-center gap-2 px-4 py-2 rounded border border-[#00ffd9] text-[#00ffd9] hover:bg-[#00ffd9] hover:text-black transition"
                                     >
                                         <img
-                                            src="/images/github-logo.svg"
+                                            src={githubIcon}
                                             alt="GitHub"
                                             className="h-5 w-5 invert"
                                         />
