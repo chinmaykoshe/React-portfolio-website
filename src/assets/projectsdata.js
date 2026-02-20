@@ -7,9 +7,20 @@ const projects = [
         'Built using MERN stack with full-fledged customer and admin panel.',
       features:
         'Customer Panel, Admin Panel, Product Management, Order Tracking, Responsive Design',
-      image: '/images/rc.png',
+      image: '/assets/ritualcakes.png',
       live: 'https://ritual-cakes--alpha.vercel.app/',
       github: 'https://github.com/chinmaykoshe/ritual-cakes-new',
+      category: 'major',
+    },
+    {
+      title: 'GLOW NATURALS Site',
+      description:
+        'Built using REACT & FIREBASE stack with full-fledged customer and admin panel.',
+      features:
+        'Customer Panel, Admin Panel, Product Management, Order Tracking, Responsive Design',
+      image: '/assets/glownaturals.jpeg',
+      live: 'https://glownaturals.netlify.app/',
+      github: 'https://github.com/chinmaykoshe/glow-naturals-new',
       category: 'major',
     },
     {
@@ -18,7 +29,7 @@ const projects = [
         'Developed an interactive course platform with progress tracking.',
       features:
         'Progress Tracking, Interactive UI, Responsive Layout, User Dashboard',
-      image: '/images/VC.png',
+      image: '/assets/visualclassroom.png',
       live: '',
       github: 'https://github.com/chinmaykoshe/visualclassrom',
       category: 'minor',
@@ -29,7 +40,7 @@ const projects = [
         'Functional food service website with user and admin portals.',
       features:
         'Restaurant Listings, Online Ordering, Admin Dashboard, User Reviews, Responsive UI',
-      image: '/images/ff.png',
+      image: '/assets/foodfly.png',
       live: '',
       github: 'https://github.com/chinmaykoshe/foodfly',
       category: 'minor',
@@ -40,7 +51,7 @@ const projects = [
         'Built a two-sided hiring system for job seekers and recruiters.',
       features:
         'Job Posting, Candidate Profiles, Application Tracking, Admin Tools, Responsive Design',
-      image: '/images/hh.png',
+      image: '/assets/hiring-hub.png',
       live: '',
       github: 'https://github.com/chinmaykoshe/hiring-hub',
       category: 'minor',
@@ -50,7 +61,7 @@ const projects = [
     //   description:
     //     'Built a chat application using React, Node.js, and Socket.io.',
     //   features: 'Real-time Chat, User Authentication, Responsive Design',
-    //   image: '/images/chatapp.png' || '',
+    //   image: '/assets/chatapp.png' || '',
     //   live: '',
     //   github: 'https://github.com/chinmaykoshe/chat-app',
     //   category: 'mini',
@@ -61,11 +72,22 @@ const projects = [
         'Built an online quick notepad application with password and exporting.',
       features:
         'Quick notes, Firebase backend, password protection, export notes',
-      image: '/images/fn.jpeg',
+      image: '/assets/firebasenotepad.jpeg',
       live: 'https://chinmaykoshe.github.io/firebase-notepad/',
       github: 'https://github.com/chinmaykoshe/Firebase-notepad',
       category: 'mini',
     },
+    {
+      title: 'Resume Builder',
+      description:
+        'Built an online resume builder application with export functionality.',
+      features:
+        'Resume Templates, Export to PDF, Responsive Design',
+      image: '/assets/resume-builder.png',
+      live: 'https://chinmaykoshe.github.io/resume-builder/',
+      github: 'https://github.com/chinmaykoshe/resume-builder',
+      category: 'mini',
+    }
   ];
   
   export default projects;
