@@ -69,7 +69,7 @@ const projects = [
     features:
       'Quick notes, Firebase backend, password protection, export notes',
     image: firebaseNotepadImage,
-    live: 'https://chinmaykoshe.github.io/firebase-notepad/',
+    live: 'https://firebasenotepad.netlify.app/',
     github: 'https://github.com/chinmaykoshe/Firebase-notepad',
     category: 'mini',
   },
